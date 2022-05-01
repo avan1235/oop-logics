@@ -1,6 +1,6 @@
 package pl.edu.mimuw.logic;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
@@ -20,7 +20,7 @@ public class Variable implements Formula {
   }
 
   public List<Variable> getAllVariables() {
-    return new ArrayList<>(List.of(new Variable(this)));
+    return Collections.singletonList(new Variable(this));
   }
 
   public String getName() {

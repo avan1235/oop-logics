@@ -90,4 +90,24 @@ class SolverTest {
     assertNotNull(solution);
     assertTrue(f5.eval(solution));
   }
+
+  @Test
+  void testSolveNoVariables() {
+    final var f1 = FormulaFactory.and(FormulaFactory.t(), FormulaFactory.t());
+
+    final var solution = Solver.anySolve(f1);
+
+    assertNotNull(solution);
+    assertTrue(f1.eval(solution));
+  }
+
+  @Test
+  void testNoSolveNoVariables() {
+    final var f1 = FormulaFactory.and(FormulaFactory.t(), FormulaFactory.f());
+
+    final var solution = Solver.anySolve(f1);
+
+    assertNull(solution);
+    assertFalse(f1.eval(solution));
+  }
 }

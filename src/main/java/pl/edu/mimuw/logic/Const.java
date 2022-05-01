@@ -1,6 +1,7 @@
 package pl.edu.mimuw.logic;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Const implements Formula {
@@ -15,7 +16,7 @@ public class Const implements Formula {
   }
 
   public List<Variable> getAllVariables() {
-    return new ArrayList<>();
+    return Collections.emptyList();
   }
 
   @Override

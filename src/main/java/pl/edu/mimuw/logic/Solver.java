@@ -15,6 +15,14 @@ public final class Solver {
     var v = new Valuation();
     final var variables = formula.getAllVariables();
 
+    if (variables.size() == 0) {
+      if (formula.eval(v)) {
+        return v;
+      } else {
+        return null;
+      }
+    }
+
     for (var currVar : variables) v.add(currVar, true);
 
     var solution = new Valuation();
