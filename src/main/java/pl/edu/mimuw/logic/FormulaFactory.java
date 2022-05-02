@@ -2,34 +2,33 @@ package pl.edu.mimuw.logic;
 
 public class FormulaFactory {
 
-  private FormulaFactory() {
-  }
+  private FormulaFactory() {}
 
   public static Formula and(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
+    return new And(l, formula);
   }
 
   public static Formula or(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
+    return new Or(l, formula);
   }
 
   public static Formula implies(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
+    return new Implication(l, formula);
   }
 
   public static Formula iff(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
+    return new Iff(l, formula);
   }
 
   public static Formula var(String name) {
-    throw new IllegalStateException("TODO");
+    return new Variable(name);
   }
 
   public static Formula t() {
-    throw new IllegalStateException("TODO");
+    return new Constant(true);
   }
 
   public static Formula f() {
-    throw new IllegalStateException("TODO");
+    return new Constant(false);
   }
 }
