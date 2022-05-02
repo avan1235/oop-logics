@@ -2,8 +2,7 @@ package pl.edu.mimuw.logic;
 
 public class FormulaFactory {
 
-  private FormulaFactory() {
-  }
+  private FormulaFactory() {}
 
   public static Formula and(Formula l, Formula formula) {
     return new And(l, formula);

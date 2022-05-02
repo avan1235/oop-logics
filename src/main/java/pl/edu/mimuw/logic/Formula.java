@@ -1,7 +1,8 @@
 package pl.edu.mimuw.logic;
-import java.util.Set;
-public interface Formula {
 
+import java.util.Set;
+
+public interface Formula {
   boolean eval(Valuation valuation);
   Set<String> allVariables();
 }

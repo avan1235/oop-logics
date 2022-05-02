@@ -1,33 +1,35 @@
 package pl.edu.mimuw.logic;
 
-import org.junit.jupiter.api.Test;
-import java.util.Map;
-import java.util.HashMap;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+
+import java.util.HashMap;
+import java.util.Map;
+import org.junit.jupiter.api.Test;
+
 class SolverTest {
 
   @Test
   void testComparingToTrueAndFalse() {
-      var p = FormulaFactory.var("p");
-      var q = FormulaFactory.var("q");
-      var two = FormulaFactory.iff(p, q);
-      var t = FormulaFactory.t();
-      var f = FormulaFactory.f();
-      var compareToT = FormulaFactory.iff(two,t);
-      var compareToF = FormulaFactory.iff(two,f);
-      var all = FormulaFactory.iff(compareToT, compareToF);
-      
-      assertEquals(Solver.solve(all), null);
+    var p = FormulaFactory.var("p");
+    var q = FormulaFactory.var("q");
+    var two = FormulaFactory.iff(p, q);
+    var t = FormulaFactory.t();
+    var f = FormulaFactory.f();
+    var compareToT = FormulaFactory.iff(two, t);
+    var compareToF = FormulaFactory.iff(two, f);
+    var all = FormulaFactory.iff(compareToT, compareToF);
+
+    assertEquals(Solver.solve(all), null);
   }
 
   @Test
   void simpleTestForNotNull() {
-      var p = FormulaFactory.var("p");
-      var q = FormulaFactory.var("q");
-      var two = FormulaFactory.iff(p, q);
-      
-      assertNotEquals(Solver.solve(two), null);
+    var p = FormulaFactory.var("p");
+    var q = FormulaFactory.var("q");
+    var two = FormulaFactory.iff(p, q);
+
+    assertNotEquals(Solver.solve(two), null);
   }
 
   @Test
@@ -45,7 +47,7 @@ class SolverTest {
     var sis0 = FormulaFactory.iff(no, s);
     var both2 = FormulaFactory.and(qis1, sis0);
     var all2 = FormulaFactory.and(both, both2);
-    Map<String,Boolean> map = new HashMap<String,Boolean>();
+    Map<String, Boolean> map = new HashMap<String, Boolean>();
     map.put("r", false);
     map.put("s", false);
     map.put("p", true);
