@@ -6,30 +6,30 @@ public class FormulaFactory {
   }
 
   public static Formula and(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
+    return new Conjuction(l, formula);
   }
 
   public static Formula or(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
+    return new Disjunction(l, formula);
   }
 
   public static Formula implies(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
+    return new Disjunction(new Negation(l), formula);
   }
 
   public static Formula iff(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
+    return new Conjuction(implies(l, formula), implies(formula, l));
   }
 
   public static Formula var(String name) {
-    throw new IllegalStateException("TODO");
+    return new Variable(name);
   }
 
   public static Formula t() {
-    throw new IllegalStateException("TODO");
+    return new Constant(true);
   }
 
   public static Formula f() {
-    throw new IllegalStateException("TODO");
+    return new Constant(false);
   }
 }
