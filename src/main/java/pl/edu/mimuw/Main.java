@@ -6,10 +6,10 @@ import pl.edu.mimuw.logic.Formula;
 public class Main {
 	public static void main(String[] args) {
 		final Formula a = var("a"),
-		        b = var("b"),
-		        c = var("c"),
-		        t = t(),
-		        f = f();
+		              b = var("b"),
+		              c = var("c"),
+		              t = t(),
+		              f = f();
 		
 		final Formula formula1 =
 		implies(
@@ -65,7 +65,7 @@ public class Main {
 			)
 		);
 		
-		System.out.println("formula1 = " + formula1.toString());
-		System.out.println("formula2 = " + formula2.toString());
+		System.out.println("formula1: " + formula1.toString());
+		System.out.println("formula2: " + formula2.toString());
 	}
 }

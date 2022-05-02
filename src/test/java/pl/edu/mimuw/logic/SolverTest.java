@@ -9,11 +9,11 @@ class SolverTest {
 	@Test
 	void test1() {
 		final Formula a = var("a"),
-		        b = var("b"),
-		        c = var("c"),
-		        d = var("d"),
-		        t = t(),
-		        f = f();
+		              b = var("b"),
+		              c = var("c"),
+		              d = var("d"),
+		              t = t(),
+		              f = f();
 		
 		Valuation valuation = new Valuation();
 		valuation.addVariable("a", true);
@@ -27,14 +27,14 @@ class SolverTest {
 		assertEquals(d.eval(valuation), false);
 		
 		final Formula aAndB = and(a, b),
-		        aAndC = and(a, c),
-		        cAndD = and(c, d),
-		        aOrB = or(a, b),
-		        aOrC = or(a, c),
-		        cOrD = or(c, d),
-		        aXorB = xor(a, b),
-		        aXorC = xor(a, c),
-		        cXorD = xor(c, d);
+		              aAndC = and(a, c),
+		              cAndD = and(c, d),
+		              aOrB = or(a, b),
+		              aOrC = or(a, c),
+		              cOrD = or(c, d),
+		              aXorB = xor(a, b),
+		              aXorC = xor(a, c),
+		              cXorD = xor(c, d);
 		
 		assertEquals(aAndB.eval(valuation), true);
 		assertEquals(aAndC.eval(valuation), false);
@@ -50,10 +50,10 @@ class SolverTest {
 	@Test
 	void test2() {
 		final Formula x = var("x"),
-		        y = var("y"),
-		        z = var("z"),
-		        t = t(),
-		        f = f();
+		              y = var("y"),
+		              z = var("z"),
+		              t = t(),
+		              f = f();
 		
 		Valuation valuation1 = new Valuation();
 		valuation1.addVariable("x", false);
