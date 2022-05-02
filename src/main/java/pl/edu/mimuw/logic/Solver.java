@@ -16,16 +16,20 @@ public class Solver {
             return null;
         }
         boolean[] keys = new boolean[size];
+        Map<String,Boolean> map = new HashMap<String,Boolean>();
         for (int i = 0; i < (1 << size); i++) {
-            Map<String,Boolean> map = new HashMap<String,Boolean>();
+            int l = i;
             for(int j=0; j<size; j++){
-                keys[j] = ((i%2)==0);
-                i=i/2;
+                keys[j] = ((l%2)==0);
+                l=l/2;
                 map.put(arr[j],keys[j]);
             }
             var currentValuation = new Valuation(map);
             if(formula.eval(currentValuation)){
                 return currentValuation;
+            }
+            else{
+                map.clear();
             }
         }
         return null;

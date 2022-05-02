@@ -16,9 +16,9 @@ public class Main {
     var two3 = FormulaFactory.iff(s, p);
     var two4 = FormulaFactory.iff(two3, FormulaFactory.t());
     var all = FormulaFactory.implies(two, two2);
-    var all2 = FormulaFactory.or(all, two4);
-    System.out.println(all2);
-    System.out.println(all2.allVariables());
-    System.out.println(Solver.solve(all2));
+    var all3 = FormulaFactory.or(all, two4);
+    System.out.println(all3);
+    System.out.println(all3.allVariables());
+    System.out.println(Solver.solve(all3));
   }
 }

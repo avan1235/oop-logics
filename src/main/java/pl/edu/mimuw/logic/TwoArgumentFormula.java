@@ -5,7 +5,7 @@ public abstract class TwoArgumentFormula implements Formula {
     protected Formula x2;
     protected String name;
     
-    public TwoArgumentFormula(Formula x1, Formula x2) {
+    protected TwoArgumentFormula(Formula x1, Formula x2) {
         this.x1 = x1;
         this.x2 = x2;
     }
