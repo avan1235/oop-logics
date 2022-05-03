@@ -6,7 +6,7 @@ public class FormulaFactory {
   }
 
   public static Formula and(Formula l, Formula formula) {
-    return new Conjuction(l, formula);
+    return new Conjunction(l, formula);
   }
 
   public static Formula or(Formula l, Formula formula) {
@@ -14,11 +14,15 @@ public class FormulaFactory {
   }
 
   public static Formula implies(Formula l, Formula formula) {
-    return new Disjunction(new Negation(l), formula);
+    return new Disjunction(not(l), formula);
   }
 
   public static Formula iff(Formula l, Formula formula) {
-    return new Conjuction(implies(l, formula), implies(formula, l));
+    return new Conjunction(implies(l, formula), implies(formula, l));
+  }
+
+  public static Formula not(Formula l) {
+    return new Negation(l);
   }
 
   public static Formula var(String name) {

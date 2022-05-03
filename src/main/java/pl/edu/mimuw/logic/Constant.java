@@ -18,4 +18,9 @@ public class Constant implements Formula {
   public Set<Variable> getVariables() {
     return null;
   }
+
+  @Override
+  public String toString() {
+    return this.value ? "⊤" : "⊥";
+  }
 }

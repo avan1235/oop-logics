@@ -1,34 +1,42 @@
 package pl.edu.mimuw.logic;
 
-import java.util.Hashtable;
+import java.util.HashMap;
 
 public class Valuation {
-  private final Hashtable<String, Boolean> valuations;
+  private final HashMap<String, Boolean> valuations;
 
   public Valuation() {
-    this.valuations = new Hashtable<>();
+    this.valuations = new HashMap<>();
   }
 
-  public void add(String name, boolean value) {
-    this.valuations.put(name, value);
+  public void add(String var, boolean value) {
+    this.valuations.put(var, value);
   }
 
-  public void remove(String name) {
-    this.valuations.remove(name);
-  }
-
-  public boolean get(Variable variable) {
-    return valuations.getOrDefault(variable.getName(), false);
+  public boolean get(String var) {
+    return valuations.getOrDefault(var, false);
   }
 
   @Override
   public String toString() {
     StringBuilder res = new StringBuilder();
 
-    this.valuations.forEach((str, val) ->
-      res.append(str).append("->").append(val).append(" ")
+    this.valuations.forEach((var, val) ->
+      res.append(var).append("->").append(val).append(" ")
     );
 
     return res.toString();
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (!(o instanceof Valuation)) return false;
+    var t = (Valuation) o;
+    return this.valuations.equals(t.valuations);
+  }
+
+  @Override
+  public int hashCode() {
+    return this.valuations.hashCode();
   }
 }

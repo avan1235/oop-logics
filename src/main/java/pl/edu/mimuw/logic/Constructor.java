@@ -17,8 +17,12 @@ public abstract class Constructor implements Formula {
 
   @Override
   public Set<Variable> getVariables() {
-    HashSet<Variable> variables = new HashSet<>(f1.getVariables());
-    variables.addAll(f2.getVariables());
+    HashSet<Variable> variables = new HashSet<>();
+    for (Formula f : new Formula[]{f1, f2})
+      if (f != null && f.getVariables() != null) variables.addAll(f.getVariables());
     return variables;
   }
+
+  @Override
+  public abstract String toString();
 }

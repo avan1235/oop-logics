@@ -17,7 +17,7 @@ public final class Variable implements Formula {
 
   @Override
   public boolean eval(Valuation valuation) {
-    return valuation.get(this);
+    return valuation.get(this.name);
   }
 
   @Override
