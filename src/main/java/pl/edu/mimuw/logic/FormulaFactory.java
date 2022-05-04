@@ -1,35 +1,44 @@
 package pl.edu.mimuw.logic;
 
-public class FormulaFactory {
+public class FormulaFactory
+{
 
-  private FormulaFactory() {
-  }
+	private FormulaFactory()
+	{
+	}
 
-  public static Formula and(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
-  }
+	public static Formula and(Formula left, Formula right)
+	{
+		return new AndFormula(left, right);
+	}
 
-  public static Formula or(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
-  }
+	public static Formula or(Formula left, Formula right)
+	{
+		return new OrFormula(left, right);
+	}
 
-  public static Formula implies(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
-  }
+	public static Formula implies(Formula left, Formula right)
+	{
+		return new ImpliesFormula(left, right);
+	}
 
-  public static Formula iff(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
-  }
+	public static Formula iff(Formula left, Formula right)
+	{
+		return new IffFormula(left, right);
+	}
 
-  public static Formula var(String name) {
-    throw new IllegalStateException("TODO");
-  }
+	public static Formula var(String name)
+	{
+		return new VarFormula(name);
+	}
 
-  public static Formula t() {
-    throw new IllegalStateException("TODO");
-  }
+	public static Formula t()
+	{
+		return new ConstFormula(true);
+	}
 
-  public static Formula f() {
-    throw new IllegalStateException("TODO");
-  }
+	public static Formula f()
+	{
+		return new ConstFormula(false);
+	}
 }
