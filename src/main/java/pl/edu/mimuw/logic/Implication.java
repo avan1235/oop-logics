@@ -1,7 +1,5 @@
 package pl.edu.mimuw.logic;
 
-import java.util.ArrayList;
-
 public class Implication extends DoubleArg {
   public Implication(Formula left, Formula right) {
     super(left, right);
@@ -14,7 +12,7 @@ public class Implication extends DoubleArg {
 
   @Override
   public String toString() {
-    var sb=new StringBuilder();
+    var sb = new StringBuilder();
     sb.append("Implication with children:\n").append("left: ").append(this.left.toString()).append("\nright: ").append(this.right.toString());
     return sb.toString();
   }

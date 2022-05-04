@@ -13,14 +13,14 @@ public class Valuation {
 
   public Valuation(List<String> keys, List<Boolean> values) {
     this.variableMap = new HashMap<>();
-    for(int i = 0; i < keys.size(); i++) {
+    for (int i = 0; i < keys.size(); i++) {
       variableMap.put(keys.get(i), values.get(i));
     }
   }
 
   @Override
   public String toString() {
-    var sb=new StringBuilder();
+    var sb = new StringBuilder();
     sb.append("Valuation according to HashMap: ").append(this.variableMap.toString());
     return sb.toString();
   }

@@ -9,22 +9,22 @@ public class FormulaFactory {
   }
 
   public static Formula and(Formula l, Formula formula) {
-    return new Conjunction(l,formula);
+    return new Conjunction(l, formula);
   }
 
   public static Formula or(Formula l, Formula formula) {
-    return new Alternative(l,formula);
+    return new Alternative(l, formula);
   }
 
   public static Formula implies(Formula l, Formula formula) {
-    return new Implication(l,formula);
+    return new Implication(l, formula);
   }
 
   public static Formula iff(Formula l, Formula formula) {
-    return new Equivalence(l,formula);
+    return new Equivalence(l, formula);
   }
 
-  public static Formula not(Formula formula){
+  public static Formula not(Formula formula) {
     return new Negation(formula);
   }
 
@@ -40,11 +40,11 @@ public class FormulaFactory {
     return new Const(false);
   }
 
-  public static Valuation newValuationRandom(Formula formula){
-    ArrayList<String>variables=formula.getAllVariables();
-    ArrayList<Boolean>values=new ArrayList<Boolean>(variables.size());
-    var r=new Random();
-    for(var value:values)value=r.nextBoolean();
-    return new Valuation(variables,values);
+  public static Valuation newValuationRandom(Formula formula) {
+    ArrayList<String> variables = formula.getAllVariables();
+    ArrayList<Boolean> values = new ArrayList<Boolean>(variables.size());
+    var r = new Random();
+    for (var value : values) value = r.nextBoolean();
+    return new Valuation(variables, values);
   }
 }

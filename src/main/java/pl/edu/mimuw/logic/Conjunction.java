@@ -12,7 +12,7 @@ public class Conjunction extends DoubleArg {
 
   @Override
   public String toString() {
-    var sb=new StringBuilder();
+    var sb = new StringBuilder();
     sb.append("Conjunction with children:\n").append("left: ").append(this.left.toString()).append("\nright: ").append(this.right.toString());
     return sb.toString();
   }

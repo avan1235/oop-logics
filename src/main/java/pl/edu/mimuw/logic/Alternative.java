@@ -14,7 +14,7 @@ public class Alternative extends DoubleArg {
 
   @Override
   public String toString() {
-    var sb=new StringBuilder();
+    var sb = new StringBuilder();
     sb.append("Alternative with children:\n").append("left: ").append(this.left.toString()).append("\nright: ").append(this.right.toString());
     return sb.toString();
   }
