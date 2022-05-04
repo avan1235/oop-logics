@@ -1,8 +1,10 @@
 package pl.edu.mimuw.logic;
 
+import java.util.ArrayList;
+
 public interface Formula {
 
   boolean eval(Valuation valuation);
 
-  // TODO: extend interface with needed methods
+  ArrayList<FormulaVariable> variables();
 }
