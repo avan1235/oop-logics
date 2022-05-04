@@ -1,6 +1,10 @@
 package pl.edu.mimuw;
 
-import pl.edu.mimuw.logic.*;
+import pl.edu.mimuw.logic.Formula;
+import pl.edu.mimuw.logic.Solver;
+import pl.edu.mimuw.logic.Valuation;
+
+import static pl.edu.mimuw.logic.FormulaFactory.*;
 
 public class Main {
 
@@ -14,18 +18,18 @@ public class Main {
   }
 
   public static void main(String[] args) {
-    Formula p = FormulaFactory.var("p");
-    Formula q = FormulaFactory.var("q");
-    Formula r = FormulaFactory.var("r");
-    Formula pAndQ = FormulaFactory.and(p, q);
+    Formula p = var("p");
+    Formula q = var("q");
+    Formula r = var("r");
+    Formula pAndQ = and(p, q);
 
-    Formula pqImpliesR = FormulaFactory.implies(pAndQ, r);
+    Formula pqImpliesR = implies(pAndQ, r);
     printSolved(pqImpliesR);
 
-    Formula pqImpliesR2 = FormulaFactory.and(pqImpliesR, r);
+    Formula pqImpliesR2 = and(pqImpliesR, r);
     printSolved(pqImpliesR2);
 
-    Formula never = FormulaFactory.and(FormulaFactory.t(), FormulaFactory.f());
+    Formula never = and(t(), f());
     printSolved(never);
   }
 }

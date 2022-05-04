@@ -1,7 +1,6 @@
 package pl.edu.mimuw.logic;
 
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
 
 public final class Variable implements Formula {
@@ -22,7 +21,7 @@ public final class Variable implements Formula {
 
   @Override
   public Set<Variable> getVariables() {
-    return new HashSet<>(Collections.singleton(this));
+    return Collections.singleton(this);
   }
 
   @Override

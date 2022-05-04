@@ -1,10 +1,9 @@
 package pl.edu.mimuw.logic;
 
 import java.util.*;
-import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Solver {
-  private static Boolean[] valToBoolean(Valuation val, ArrayList<Variable> variables) {
+  private static Boolean[] valToBoolean(Valuation val, List<Variable> variables) {
     Boolean[] res = new Boolean[variables.size()];
     int i = 0;
 
@@ -14,7 +13,7 @@ public class Solver {
     return res;
   }
 
-  private static Valuation valFromBoolean(Boolean[] tried, ArrayList<Variable> variables) {
+  private static Valuation valFromBoolean(Boolean[] tried, List<Variable> variables) {
     Valuation gen = new Valuation();
     int i = 0;
 
@@ -24,7 +23,7 @@ public class Solver {
     return gen;
   }
 
-  private static Valuation allFalseValuation(ArrayList<Variable> variables) {
+  private static Valuation allFalseValuation(List<Variable> variables) {
     Valuation gen = new Valuation();
     for (Variable var : variables)
       gen.add(var.getName(), false);
@@ -32,8 +31,8 @@ public class Solver {
   }
 
   public static Valuation solveBrutally(Formula formula) {
-    ArrayList<Variable> variables = new ArrayList<>(formula.getVariables());
-    Queue<Valuation> queue = new ConcurrentLinkedQueue<>();
+    List<Variable> variables = new ArrayList<>(formula.getVariables());
+    Queue<Valuation> queue = new LinkedList<>();
     Set<Integer> visited = new HashSet<>();
 
     Valuation curr = allFalseValuation(variables);
@@ -49,7 +48,7 @@ public class Solver {
   }
 
   private static void generate(Valuation val, Queue<Valuation> queue,
-                               Set<Integer> visited, ArrayList<Variable> variables) {
+                               Set<Integer> visited, List<Variable> variables) {
 
     Boolean[] tried = valToBoolean(val, variables);
 

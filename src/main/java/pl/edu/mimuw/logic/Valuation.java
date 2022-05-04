@@ -1,9 +1,10 @@
 package pl.edu.mimuw.logic;
 
 import java.util.HashMap;
+import java.util.Map;
 
 public class Valuation {
-  private final HashMap<String, Boolean> valuations;
+  private final Map<String, Boolean> valuations;
 
   public Valuation() {
     this.valuations = new HashMap<>();
