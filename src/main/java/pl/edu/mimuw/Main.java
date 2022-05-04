@@ -1,8 +1,6 @@
 package pl.edu.mimuw;
 
-import pl.edu.mimuw.logic.Formula;
-import pl.edu.mimuw.logic.Solver;
-import pl.edu.mimuw.logic.Valuation;
+import pl.edu.mimuw.logic.*;
 
 import static pl.edu.mimuw.logic.FormulaFactory.*;
 
