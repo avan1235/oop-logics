@@ -11,6 +11,13 @@ public class Variable implements Formula {
   public Variable(String varName) {
     this.varName = varName;
   }
+  public Variable(Variable var) {
+    this(var.getVarName());
+  }
+
+  public String getVarName() {
+    return varName;
+  }
 
   @Override
   public boolean eval(Valuation valuation) {

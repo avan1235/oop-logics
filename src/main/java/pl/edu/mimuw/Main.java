@@ -3,6 +3,7 @@ package pl.edu.mimuw;
 import pl.edu.mimuw.logic.Constant;
 import pl.edu.mimuw.logic.Formula;
 import pl.edu.mimuw.logic.FormulaFactory;
+import pl.edu.mimuw.logic.Solver;
 
 public class Main {
 
@@ -24,5 +25,8 @@ public class Main {
 
     System.out.println(andImpliesOr);
     System.out.println(simpleAndImpliesOr);
+
+    var solver = new Solver(FormulaFactory.iff(FormulaFactory.var("x"), FormulaFactory.var("y")));
+    var test = solver.solve();
   }
 }

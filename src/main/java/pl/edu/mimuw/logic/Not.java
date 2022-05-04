@@ -15,10 +15,10 @@ public class Not extends Operator1Arg {
   public Formula simplify() {
     if (simpleChild.isConstant()) {
       if (simpleChild.eval(null)) {
-        return FormulaFactory.t();
+        return FormulaFactory.f();
       }
       else {
-        return FormulaFactory.f();
+        return FormulaFactory.t();
       }
     }
     else {
