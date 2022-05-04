@@ -1,8 +1,12 @@
 package pl.edu.mimuw.logic;
 
+import java.util.*;
+
 public interface Formula {
 
   boolean eval(Valuation valuation);
 
-  // TODO: extend interface with needed methods
+  String toString();
+
+  Set <String> variables();
 }

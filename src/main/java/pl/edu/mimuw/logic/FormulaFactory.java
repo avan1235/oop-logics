@@ -6,30 +6,41 @@ public class FormulaFactory {
   }
 
   public static Formula and(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
+    Formula a = new And(l, formula);
+    return a;
   }
 
   public static Formula or(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
+    Formula o = new Or(l, formula);
+    return o;
+
   }
 
   public static Formula implies(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
+
+    Formula i = new Implies(l, formula);
+    return i;
   }
 
   public static Formula iff(Formula l, Formula formula) {
-    throw new IllegalStateException("TODO");
+
+    Formula i = new Iff(l, formula);
+    return i;
   }
 
   public static Formula var(String name) {
-    throw new IllegalStateException("TODO");
+
+    return new Variable(name);
+
   }
 
   public static Formula t() {
-    throw new IllegalStateException("TODO");
+    Formula t = new ConstantTrue();
+    return t;
   }
 
   public static Formula f() {
-    throw new IllegalStateException("TODO");
+    Formula f = new ConstantFalse();
+    return f;
   }
 }
