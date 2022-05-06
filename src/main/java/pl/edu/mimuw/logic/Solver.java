@@ -61,10 +61,7 @@ public final class Solver {
       return;
     }
 
-    final var valCopy = new Valuation();
-    for (var currVar : v.getAllVariables()) {
-      valCopy.add(currVar, v.getValue(currVar));
-    }
+    final var valCopy = new Valuation(v);
 
     valCopy.setValueOnIndex(i, true);
     findSolution(formula, valCopy, i + 1, solution);

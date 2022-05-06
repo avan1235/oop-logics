@@ -1,7 +1,6 @@
 package pl.edu.mimuw.logic;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public abstract class Operator2Args implements Formula {
   protected final Formula left;
@@ -12,8 +11,8 @@ public abstract class Operator2Args implements Formula {
     this.right = right;
   }
 
-  public List<Variable> getAllVariables() {
-    final var variables = new ArrayList<Variable>();
+  public Set<Variable> getAllVariables() {
+    final var variables = new HashSet<Variable>();
 
     variables.addAll(this.left.getAllVariables());
     variables.addAll(this.right.getAllVariables());

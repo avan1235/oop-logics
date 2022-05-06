@@ -1,6 +1,6 @@
 package pl.edu.mimuw.logic;
 
-import java.util.List;
+import java.util.Set;
 
 public abstract class Operator1Arg implements Formula {
   protected final Formula arg;
@@ -9,7 +9,7 @@ public abstract class Operator1Arg implements Formula {
     this.arg = arg;
   }
 
-  public List<Variable> getAllVariables() {
+  public Set<Variable> getAllVariables() {
     return this.arg.getAllVariables();
   }
 

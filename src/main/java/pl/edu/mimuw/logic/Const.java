@@ -1,8 +1,7 @@
 package pl.edu.mimuw.logic;
 
-import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
+import java.util.Set;
 
 public class Const implements Formula {
   private final boolean value;
@@ -15,8 +14,8 @@ public class Const implements Formula {
     return this.value;
   }
 
-  public List<Variable> getAllVariables() {
-    return Collections.emptyList();
+  public Set<Variable> getAllVariables() {
+    return Collections.emptySet();
   }
 
   @Override

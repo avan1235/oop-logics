@@ -1,8 +1,8 @@
 package pl.edu.mimuw.logic;
 
 import java.util.Collections;
-import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 
 public class Variable implements Formula {
   private final String name;
@@ -19,8 +19,8 @@ public class Variable implements Formula {
     return valuation.getValue(this);
   }
 
-  public List<Variable> getAllVariables() {
-    return Collections.singletonList(new Variable(this));
+  public Set<Variable> getAllVariables() {
+    return Collections.singleton(new Variable(this));
   }
 
   public String getName() {

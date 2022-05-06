@@ -16,6 +16,16 @@ public class Valuation {
     this(new HashMap<>());
   }
 
+  public Valuation(Valuation v) {
+    final var copy = new HashMap<Variable, Boolean>();
+
+    for (var currVar : v.getAllVariables()) {
+      copy.put(new Variable(currVar), v.getValue(currVar));
+    }
+
+    this.values = copy;
+  }
+
   public boolean getValue(Variable v) {
     return this.values.get(v);
   }
